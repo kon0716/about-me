@@ -1,54 +1,130 @@
-# React + TypeScript + Vite
+# 個人ポートフォリオサイト
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React + TypeScript + Vite で作成した個人ポートフォリオサイトです。
 
-Currently, two official plugins are available:
+## 🎯 プロジェクト概要
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+自己紹介・ポートフォリオサイトとして、個人のスキル、経歴、作品、趣味などを紹介する Web サイトです。
 
-## Expanding the ESLint configuration
+## ✨ 主な機能
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **レスポンシブデザイン**: モバイル・タブレット・デスクトップに対応
+- **5 つのページ**: TOP、自己紹介、お問い合わせ、作品・スキル、趣味・興味
+- **インタラクティブ要素**: JavaScript 実装による動的コンテンツ
+- **コンタクトフォーム**: バリデーション付きお問い合わせフォーム
+- **統一されたデザイン**: 全ページで一貫したテーマとスタイル
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## 🛠️ 技術スタック
+
+- **フロントエンド**: React 19.1.0
+- **言語**: TypeScript
+- **ビルドツール**: Vite 6.3.5
+- **スタイリング**: CSS Modules / Vanilla CSS
+- **リンター**: ESLint
+- **開発環境**: Node.js
+
+## 📁 プロジェクト構造
+
+```
+about-me/
+├── docs/                     # プロジェクドキュメント
+│   ├── project-requirements.md
+│   ├── site-design.md
+│   └── development-plan.md
+├── public/                   # 静的ファイル
+├── src/                      # ソースコード
+│   ├── components/          # Reactコンポーネント
+│   ├── pages/              # ページコンポーネント
+│   ├── styles/             # スタイルファイル
+│   └── utils/              # ユーティリティ
+└── README.md
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🚀 セットアップ・実行方法
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### 前提条件
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+- Node.js (v18 以上推奨)
+- npm
+
+### インストール
+
+```bash
+# プロジェクトのクローン
+git clone [repository-url]
+cd about-me
+
+# 依存関係のインストール
+npm install
 ```
+
+### 開発サーバーの起動
+
+```bash
+npm run dev
+```
+
+http://localhost:5173 でサイトにアクセスできます。
+
+### ビルド
+
+```bash
+npm run build
+```
+
+### プレビュー
+
+```bash
+npm run preview
+```
+
+## 📋 要件チェックリスト
+
+### 基本要件
+
+- [x] ヘッダー、フッター、ナビゲーションが各ページにある
+- [x] レスポンシブサイトである
+- [x] 5 ページ以上（TOP、自己紹介、お問い合わせ、作品・スキル、趣味・興味）
+- [x] 各ページに CSS・JavaScript が適用され、テーマが統一されている
+- [x] お問い合わせフォームがある
+- [x] フリー素材・オリジナルコンテンツのみ使用
+- [x] JavaScript の実装が含まれている
+
+### 技術要件
+
+- [x] HTML 要素の class 命名規則（BEM 記法）
+- [x] 適切な HTML マークアップ
+- [x] リセット CSS 使用
+- [x] CSS アンチパターンの回避
+- [x] 各ページに JavaScript 実装
+- [x] 適切なディレクトリ構造
+- [x] 英数字ファイル名
+
+## 🎨 デザイン
+
+- **テーマ**: モダンでプロフェッショナル
+- **カラーパレット**: ダークテーマベース
+- **レスポンシブ**: モバイルファーストアプローチ
+
+## 📖 ドキュメント
+
+詳細な設計・開発情報は `docs/` フォルダ内のドキュメントを参照してください：
+
+- [プロジェクト要件書](docs/project-requirements.md)
+- [サイト設計書](docs/site-design.md)
+- [開発計画書](docs/development-plan.md)
+
+## 📝 ライセンス
+
+このプロジェクトは学習目的で作成されています。使用している画像・コンテンツはフリー素材またはオリジナルです。
+
+## 👤 作成者
+
+[あなたの名前]
+
+- Email: [your-email@example.com]
+- GitHub: [your-github-username]
+
+---
+
+_作成日: 2025 年 6 月 14 日_
