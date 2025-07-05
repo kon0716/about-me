@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+    <meta charset="UTF-8">
+
+    <title>contact~お問い合わせ~</title>
+    <meta
+        name="description"
+        content="このページは、私についての紹介や趣味、についての情報を提供します。"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--ファビコン-->
+    <link rel="icon" type="images/png" href="image/kyoto-tech.png"/>
+
+    <!--オリジナルcss-->
+    <link rel="stylesheet" href="css/contact.css">
+    </head>
+
+    <boby>
+        <div class="sub-cover cover-contact">
+            <header class="page-header wapper">
+                <h1 class="align-center">
+                    <a href="index.html"
+                    ><img class="logo" src="image/kyoto-tech.png" alt="Logo"/></a>
+                </h1>
+                <nav>
+                    <ul class="main-nav font-english"></ul>
+                        <li><a href="hobby.html">趣味</a></li>
+                        <li><a href="game.html">ゲーム</a></li>
+                        <li><a href="contact.html">連絡先</a></li>
+                        <li><a href="profile.html">プロフィール</a></li>
+                        <li><a href="index.html">ホーム</a></li>
+                    </ul>
+                </nav>
+            </header>
+                <h1>お問い合わせ</h1>
+        <form action="送信先のURL" method="post">
+            <label for="name">お名前</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">メールアドレス</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="subject">件名</label>
+            <input type="text" id="subject" name="subject" required>
+
+            <label for="message">メッセージ</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit" class="submit-button">送信</button>
+        </form>
+    </body>
+</html>

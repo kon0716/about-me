@@ -1,0 +1,47 @@
+@charset "UTF-8";
+
+/* HOME
+----------------------------- */
+.coverr-home{
+    background-image: url(../image/ametyan.jpg);
+}
+.about {
+    margin: 4rem auto 0;
+}
+.abut p {
+    margin-bottom: 3rem;
+}
+
+/* ヘッダー
+------------------------------- */
+.page-header {
+  padding-top: 0.5rem;
+}
+.logo {
+  width: 210px;
+}
+.main-nav {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  font-size: 1.5rem;
+  list-style: none;
+}
+.main-nav a {
+  color: #432;
+}
+.main-nav a:hover {
+  color: #0bd;
+}
+
+/* フッター
+------------------------------- */
+ body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    #datetime {
+      font-size: 1.5em;
+      color: #333;
+    }
