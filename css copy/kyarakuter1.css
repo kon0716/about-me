@@ -1,0 +1,1597 @@
+/* キャラクター紹介ページ専用CSS - テイワット風スタイル */
+
+/* フォント設定 */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;600;700&display=swap');
+
+body {
+    font-family: 'Noto Sans JP', 'Cinzel', serif;
+    background: linear-gradient(180deg, #0a0e1a 0%, #1a1f2e 50%, #2a2f3e 100%);
+    color: #e8f4f8;
+}
+
+/* カバー背景 - キャラクター専用 */
+.cover-characters {
+    background: 
+        radial-gradient(circle at 30% 70%, rgba(255,215,0,0.4) 0%, transparent 50%),
+        radial-gradient(circle at 70% 30%, rgba(135,206,235,0.3) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(147,112,219,0.2) 0%, transparent 50%),
+        linear-gradient(135deg, #0a0e1a 0%, #1a1f2e 25%, #2a2f3e 50%, #1e3c72 75%, #2a5298 100%);
+    position: relative;
+    overflow: hidden;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-bottom: 3px solid rgba(255,215,0,0.6);
+}
+
+.cover-characters::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,215,0,0.9)"/><circle cx="80" cy="40" r="1.5" fill="rgba(255,255,255,0.8)"/><circle cx="40" cy="70" r="1" fill="rgba(135,206,235,0.7)"/><circle cx="70" cy="20" r="1.2" fill="rgba(255,215,0,0.6)"/><circle cx="30" cy="50" r="0.8" fill="rgba(255,255,255,0.7)"/><circle cx="60" cy="80" r="1.8" fill="rgba(255,215,0,0.8)"/><circle cx="10" cy="60" r="1" fill="rgba(135,206,235,0.9)"/><circle cx="90" cy="15" r="1.3" fill="rgba(255,255,255,0.9)"/></svg>') repeat;
+    animation: starFieldSlow 50s linear infinite;
+    z-index: 1;
+}
+
+.cover-characters::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100"><path d="M0,60 Q50,40 100,60 T200,60 L200,100 L0,100 Z" fill="rgba(10,14,26,0.8)"/></svg>') bottom repeat-x;
+    z-index: 2;
+}
+
+/* ページタイトル */
+.page-title {
+    position: relative;
+    z-index: 10;
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    font-size: 3.2rem;
+    text-shadow: 
+        0 0 20px rgba(255,215,0,0.8), 
+        0 0 40px rgba(135,206,235,0.6),
+        0 0 60px rgba(147,112,219,0.4);
+    animation: titleGlow 4s ease-in-out infinite alternate;
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+}
+
+.subtitle {
+    position: relative;
+    z-index: 10;
+    font-size: 1.3rem;
+    color: #87ceeb;
+    font-weight: 500;
+    text-shadow: 0 0 15px rgba(135,206,235,0.5);
+    animation: subtitleFloat 3s ease-in-out infinite;
+}
+
+@keyframes starFieldSlow {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    25% { opacity: 0.7; }
+    50% { opacity: 1; }
+    75% { opacity: 0.8; }
+    100% { transform: translateY(-150px) rotate(360deg); opacity: 1; }
+}
+
+@keyframes titleGlow {
+    0% { 
+        text-shadow: 
+            0 0 20px rgba(255,215,0,0.8), 
+            0 0 40px rgba(135,206,235,0.6),
+            0 0 60px rgba(147,112,219,0.4);
+        transform: scale(1);
+    }
+    100% { 
+        text-shadow: 
+            0 0 30px rgba(255,215,0,1), 
+            0 0 60px rgba(135,206,235,0.8),
+            0 0 90px rgba(147,112,219,0.6);
+        transform: scale(1.02);
+    }
+}
+
+@keyframes subtitleFloat {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+}
+
+/* メインコンテンツ */
+.main-content {
+    background: linear-gradient(180deg, 
+        rgba(10,14,26,0.95) 0%, 
+        rgba(26,31,46,0.95) 25%, 
+        rgba(42,47,62,0.95) 50%, 
+        rgba(26,31,46,0.95) 75%, 
+        rgba(10,14,26,0.95) 100%);
+    position: relative;
+}
+
+.main-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,215,0,0.03)" stroke-width="1"/><circle cx="50" cy="50" r="25" fill="none" stroke="rgba(135,206,235,0.03)" stroke-width="1"/><circle cx="50" cy="50" r="15" fill="none" stroke="rgba(147,112,219,0.03)" stroke-width="1"/></svg>') repeat;
+    z-index: 1;
+}
+
+.main-content > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* 見出しスタイル */
+.heading-large {
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+    font-size: 2.5rem;
+    background: linear-gradient(135deg, #ffd700, #87ceeb, #9370db);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-align: center;
+    margin-bottom: 3rem;
+    text-shadow: 0 0 30px rgba(255,215,0,0.3);
+    letter-spacing: 0.05em;
+}
+
+/* イントロセクション */
+.intro-section {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, 
+        rgba(255,215,0,0.08) 0%, 
+        rgba(135,206,235,0.08) 50%, 
+        rgba(147,112,219,0.08) 100%);
+    position: relative;
+}
+
+.intro-content {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.intro-text {
+    font-size: 1.2rem;
+    line-height: 2;
+    color: #e8f4f8;
+    margin-top: 2rem;
+    background: linear-gradient(135deg, 
+        rgba(10,14,26,0.9) 0%, 
+        rgba(26,31,46,0.8) 100%);
+    padding: 3rem;
+    border-radius: 25px;
+    box-shadow: 
+        0 15px 35px rgba(0,0,0,0.3),
+        inset 0 1px 0 rgba(255,215,0,0.2);
+    border: 2px solid rgba(255,215,0,0.3);
+    backdrop-filter: blur(10px);
+}
+
+/* キャラクター詳細セクション */
+.character-details-section {
+    padding: 6rem 0;
+}
+
+.character-detail {
+    background: linear-gradient(135deg, 
+        rgba(26,31,46,0.95) 0%, 
+        rgba(42,47,62,0.9) 100%);
+    border-radius: 30px;
+    padding: 3rem;
+    margin-bottom: 4rem;
+    box-shadow: 
+        0 25px 50px rgba(0,0,0,0.3),
+        inset 0 1px 0 rgba(255,215,0,0.2);
+    border: 2px solid rgba(255,215,0,0.3);
+    backdrop-filter: blur(15px);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.character-detail:hover {
+    transform: translateY(-10px);
+    box-shadow: 
+        0 35px 70px rgba(0,0,0,0.4),
+        0 0 40px rgba(255,215,0,0.3);
+    border-color: rgba(255,215,0,0.6);
+}
+
+/* テーマカラー */
+.geo-theme { 
+    border-left: 6px solid #f39c12;
+    background: linear-gradient(135deg, 
+        rgba(243,156,18,0.15) 0%, 
+        rgba(230,126,34,0.12) 30%,
+        rgba(26,31,46,0.95) 70%, 
+        rgba(42,47,62,0.9) 100%);
+    border: 2px solid rgba(243,156,18,0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.geo-theme::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 30%, rgba(243,156,18,0.3) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(230,126,34,0.2) 0%, transparent 50%),
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="15" cy="25" r="1.5" fill="rgba(243,156,18,0.7)"/><circle cx="85" cy="45" r="1" fill="rgba(255,215,0,0.8)"/><circle cx="40" cy="75" r="0.8" fill="rgba(243,156,18,0.6)"/><circle cx="75" cy="20" r="1.2" fill="rgba(230,126,34,0.7)"/><circle cx="25" cy="60" r="0.6" fill="rgba(255,215,0,0.5)"/><circle cx="60" cy="85" r="1.4" fill="rgba(243,156,18,0.8)"/></svg>') repeat;
+    animation: floatingSparks 25s linear infinite;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.geo-theme .character-header,
+.geo-theme .character-story,
+.geo-theme .character-status {
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes floatingSparks {
+    0% { transform: translateY(0) rotate(0deg); }
+    100% { transform: translateY(-20px) rotate(360deg); }
+}
+
+.anemo-theme { border-left: 6px solid #4ecdc4; }
+.hydro-theme { border-left: 6px solid #3498db; }
+.cryo-theme { border-left: 6px solid #74b9ff; }
+
+/* キャラクターヘッダー */
+.character-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.character-portrait {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.character-icon-large {
+    font-size: 5rem;
+    padding: 2rem;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 
+        0 20px 40px rgba(0,0,0,0.3),
+        inset 0 2px 5px rgba(255,255,255,0.2);
+    animation: characterPulse 4s ease-in-out infinite;
+    border: 4px solid rgba(255,215,0,0.4);
+    margin-bottom: 1rem;
+}
+
+.character-icon-large.geo {
+    background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+    box-shadow: 
+        0 20px 40px rgba(243,156,18,0.5),
+        inset 0 2px 5px rgba(255,255,255,0.3);
+}
+
+.character-icon-large.anemo {
+    background: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);
+    box-shadow: 
+        0 20px 40px rgba(78,205,196,0.5),
+        inset 0 2px 5px rgba(255,255,255,0.3);
+}
+
+.character-icon-large.hydro {
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    box-shadow: 
+        0 20px 40px rgba(52,152,219,0.5),
+        inset 0 2px 5px rgba(255,255,255,0.3);
+}
+
+.character-icon-large.cryo {
+    background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+    box-shadow: 
+        0 20px 40px rgba(116,185,255,0.5),
+        inset 0 2px 5px rgba(255,255,255,0.3);
+}
+
+@keyframes characterPulse {
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    50% { transform: scale(1.05) rotate(3deg); }
+}
+
+.element-badge {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: white;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.element-badge.geo { background: linear-gradient(135deg, #f39c12, #e67e22); }
+.element-badge.anemo { background: linear-gradient(135deg, #4ecdc4, #44a08d); }
+.element-badge.hydro { background: linear-gradient(135deg, #3498db, #2980b9); }
+.element-badge.cryo { background: linear-gradient(135deg, #74b9ff, #0984e3); }
+
+.character-info {
+    flex: 1;
+}
+
+.character-name {
+    font-family: 'Cinzel', serif;
+    font-size: 2.5rem;
+    color: #e8f4f8;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 20px rgba(255,215,0,0.4);
+    letter-spacing: 0.05em;
+}
+
+/* ナヴィア専用スタイル */
+.geo-theme .character-name {
+    background: linear-gradient(135deg, #f39c12 0%, #e67e22 30%, #f1c40f 60%, #f39c12 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 
+        0 0 30px rgba(243,156,18,0.8),
+        2px 2px 4px rgba(0,0,0,0.5);
+    filter: drop-shadow(0 0 15px rgba(243,156,18,0.6));
+    animation: naviaGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes naviaGlow {
+    0% { 
+        filter: drop-shadow(0 0 15px rgba(243,156,18,0.6)) brightness(1);
+    }
+    100% { 
+        filter: drop-shadow(0 0 25px rgba(243,156,18,0.9)) brightness(1.1);
+    }
+}
+
+.geo-theme .character-title {
+    color: #f1c40f;
+    font-style: italic;
+    font-weight: 600;
+    text-shadow: 
+        0 0 15px rgba(241,196,15,0.7),
+        1px 1px 2px rgba(0,0,0,0.8);
+    background: linear-gradient(135deg, #f1c40f 0%, #f39c12 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.character-title {
+    font-size: 1.3rem;
+    color: #87ceeb;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+    text-shadow: 0 0 10px rgba(135,206,235,0.3);
+}
+
+.character-specs {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.spec-item {
+    background: linear-gradient(135deg, 
+        rgba(255,215,0,0.2) 0%, 
+        rgba(135,206,235,0.1) 100%);
+    padding: 0.5rem 1rem;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border: 1px solid rgba(255,215,0,0.3);
+    color: #e8f4f8;
+}
+
+/* 武器凸数専用スタイル */
+.weapon-refine {
+    background: linear-gradient(135deg, 
+        rgba(255,105,180,0.3) 0%, 
+        rgba(255,20,147,0.2) 100%) !important;
+    border: 1px solid rgba(255,105,180,0.4) !important;
+    color: #ffb6c1 !important;
+    font-weight: 600;
+    text-shadow: 0 0 8px rgba(255,105,180,0.6);
+    animation: weaponGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes weaponGlow {
+    0% { 
+        box-shadow: 0 0 5px rgba(255,105,180,0.3);
+    }
+    100% { 
+        box-shadow: 0 0 15px rgba(255,105,180,0.6), 
+                    inset 0 0 10px rgba(255,105,180,0.2);
+    }
+}
+
+/* キャラクターステータス */
+.character-status {
+    margin-top: 2rem;
+    background: linear-gradient(135deg, 
+        rgba(10,14,26,0.8) 0%, 
+        rgba(26,31,46,0.6) 100%);
+    border-radius: 20px;
+    padding: 2rem;
+    border: 2px solid rgba(255,215,0,0.2);
+    box-shadow: 
+        0 10px 30px rgba(0,0,0,0.3),
+        inset 0 1px 0 rgba(255,215,0,0.1);
+}
+
+/* ナヴィア専用ステータス背景 */
+.geo-theme .character-status {
+    background: linear-gradient(135deg, 
+        rgba(243,156,18,0.12) 0%, 
+        rgba(10,14,26,0.9) 30%,
+        rgba(26,31,46,0.8) 70%,
+        rgba(243,156,18,0.08) 100%);
+    border: 2px solid rgba(243,156,18,0.3);
+    box-shadow: 
+        0 15px 35px rgba(0,0,0,0.4),
+        inset 0 1px 0 rgba(243,156,18,0.2),
+        0 0 25px rgba(243,156,18,0.15);
+}
+
+/* ナヴィア専用ストーリーセクション */
+.geo-theme .character-story {
+    background: linear-gradient(135deg, 
+        rgba(243,156,18,0.08) 0%, 
+        rgba(26,31,46,0.95) 25%,
+        rgba(10,14,26,0.9) 75%,
+        rgba(243,156,18,0.05) 100%);
+    border-radius: 20px;
+    padding: 2.5rem;
+    border: 2px solid rgba(243,156,18,0.25);
+    box-shadow: 
+        0 12px 30px rgba(0,0,0,0.3),
+        inset 0 1px 0 rgba(243,156,18,0.15);
+    position: relative;
+    overflow: hidden;
+}
+
+.geo-theme .character-story::before {
+    content: '🌻';
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 2rem;
+    opacity: 0.3;
+    animation: floatFlower 4s ease-in-out infinite alternate;
+}
+
+@keyframes floatFlower {
+    0% { transform: translateY(0) rotate(0deg); opacity: 0.3; }
+    100% { transform: translateY(-8px) rotate(10deg); opacity: 0.6; }
+}
+
+.geo-theme .character-story h4 {
+    color: #f1c40f;
+    text-shadow: 
+        0 0 20px rgba(241,196,15,0.8),
+        2px 2px 4px rgba(0,0,0,0.5);
+    background: linear-gradient(135deg, #f1c40f 0%, #f39c12 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 0 10px rgba(243,156,18,0.5));
+}
+
+/* 放浪者専用スタイル */
+.wanderer-special {
+    background: linear-gradient(135deg, 
+        rgba(20,25,40,0.95) 0%, 
+        rgba(30,35,50,0.9) 25%,
+        rgba(15,20,35,0.95) 50%,
+        rgba(25,30,45,0.9) 75%,
+        rgba(10,15,30,0.95) 100%);
+    border: 2px solid rgba(64,224,208,0.4);
+    box-shadow: 
+        0 20px 40px rgba(0,0,0,0.6),
+        inset 0 1px 0 rgba(64,224,208,0.3),
+        0 0 30px rgba(64,224,208,0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.wanderer-special::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><path d="M50,30 Q70,10 90,30 Q70,50 50,30" fill="rgba(64,224,208,0.15)" opacity="0.6"/><path d="M150,80 Q130,60 110,80 Q130,100 150,80" fill="rgba(64,224,208,0.12)" opacity="0.5"/><path d="M30,150 Q50,130 70,150 Q50,170 30,150" fill="rgba(64,224,208,0.1)" opacity="0.4"/><circle cx="160" cy="40" r="2" fill="rgba(100,149,237,0.3)"/><circle cx="40" cy="80" r="1.5" fill="rgba(64,224,208,0.4)"/></svg>') repeat;
+    animation: windFlow 12s linear infinite;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.wanderer-special .character-name {
+    background: linear-gradient(135deg, #40e0d0 0%, #6495ed 50%, #87ceeb 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 
+        0 0 25px rgba(64,224,208,0.8),
+        2px 2px 6px rgba(0,0,0,0.7);
+    font-family: 'Cinzel', serif;
+    letter-spacing: 0.1em;
+    position: relative;
+    filter: drop-shadow(0 0 15px rgba(64,224,208,0.6));
+}
+
+.wanderer-special .character-name::before {
+    content: '💨';
+    position: absolute;
+    left: -2.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.8rem;
+    animation: windSway 3s ease-in-out infinite;
+    opacity: 0.7;
+}
+
+.wanderer-special .character-name::after {
+    content: '🌪️';
+    position: absolute;
+    right: -2.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    animation: windSway 3s ease-in-out infinite 1.5s;
+    opacity: 0.7;
+}
+
+.wanderer-special .character-title {
+    color: #87ceeb;
+    font-style: italic;
+    text-shadow: 
+        0 0 20px rgba(135,206,235,0.6),
+        1px 1px 3px rgba(0,0,0,0.5);
+    opacity: 0.9;
+    font-weight: 500;
+}
+
+.wanderer-special .character-status {
+    background: linear-gradient(135deg, 
+        rgba(64,224,208,0.08) 0%, 
+        rgba(20,25,40,0.9) 30%,
+        rgba(15,20,35,0.8) 70%,
+        rgba(100,149,237,0.06) 100%);
+    border: 2px solid rgba(64,224,208,0.3);
+    box-shadow: 
+        0 15px 35px rgba(0,0,0,0.4),
+        inset 0 1px 0 rgba(64,224,208,0.2),
+        0 0 25px rgba(64,224,208,0.15);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(5px);
+}
+
+.wanderer-special .character-status::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M20,20 Q30,10 40,20 Q30,30 20,20" fill="rgba(64,224,208,0.2)"/><path d="M70,50 Q60,40 50,50 Q60,60 70,50" fill="rgba(100,149,237,0.2)"/><path d="M30,80 Q40,70 50,80 Q40,90 30,80" fill="rgba(64,224,208,0.15)"/></svg>') repeat;
+    animation: mistFlow 8s linear infinite;
+    z-index: 0;
+}
+
+.wanderer-special .character-story {
+    background: linear-gradient(135deg, 
+        rgba(64,224,208,0.06) 0%, 
+        rgba(20,25,40,0.95) 25%,
+        rgba(15,20,35,0.9) 75%,
+        rgba(100,149,237,0.04) 100%);
+    border-radius: 20px;
+    padding: 2.5rem;
+    border: 2px solid rgba(64,224,208,0.25);
+    box-shadow: 
+        0 12px 30px rgba(0,0,0,0.3),
+        inset 0 1px 0 rgba(64,224,208,0.15);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(3px);
+}
+
+.wanderer-special .character-story::before {
+    content: '🍃';
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 2rem;
+    opacity: 0.4;
+    animation: leafDrift 5s ease-in-out infinite;
+}
+
+.wanderer-special .character-story::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"><path d="M10,25 Q25,15 40,25 Q25,35 10,25" fill="none" stroke="rgba(64,224,208,0.1)" stroke-width="1"/></svg>') repeat;
+    animation: gentleWind 10s linear infinite;
+    z-index: -1;
+}
+
+.wanderer-special .character-story h4 {
+    color: #40e0d0;
+    text-shadow: 
+        0 0 20px rgba(64,224,208,0.8),
+        2px 2px 4px rgba(0,0,0,0.7);
+    background: linear-gradient(135deg, #40e0d0 0%, #6495ed 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 0 10px rgba(64,224,208,0.5));
+}
+
+@keyframes windFlow {
+    0% { transform: translateX(0px) translateY(0px); }
+    25% { transform: translateX(-10px) translateY(-5px); }
+    50% { transform: translateX(5px) translateY(-10px); }
+    75% { transform: translateX(-5px) translateY(-5px); }
+    100% { transform: translateX(0px) translateY(0px); }
+}
+
+@keyframes windSway {
+    0%, 100% { transform: translateY(-50%) translateX(0px) rotate(0deg); opacity: 0.7; }
+    50% { transform: translateY(-50%) translateX(-3px) rotate(-5deg); opacity: 1; }
+}
+
+@keyframes mistFlow {
+    0% { transform: translateX(0px); opacity: 0.3; }
+    50% { transform: translateX(-20px); opacity: 0.6; }
+    100% { transform: translateX(-40px); opacity: 0.3; }
+}
+
+@keyframes leafDrift {
+    0%, 100% { transform: translateY(0px) translateX(0px) rotate(0deg); }
+    25% { transform: translateY(-5px) translateX(-3px) rotate(-10deg); }
+    50% { transform: translateY(-8px) translateX(2px) rotate(5deg); }
+    75% { transform: translateY(-3px) translateX(-2px) rotate(-5deg); }
+}
+
+@keyframes gentleWind {
+    0% { transform: translateX(0px); }
+    100% { transform: translateX(-50px); }
+}
+
+/* フリーナ専用スタイル */
+.furina-special {
+    background: linear-gradient(135deg, 
+        rgba(25,35,55,0.95) 0%, 
+        rgba(40,60,85,0.9) 25%,
+        rgba(20,40,75,0.95) 50%,
+        rgba(35,55,80,0.9) 75%,
+        rgba(15,25,45,0.95) 100%);
+    border: 2px solid rgba(30,144,255,0.5);
+    box-shadow: 
+        0 25px 50px rgba(0,0,0,0.6),
+        inset 0 1px 0 rgba(30,144,255,0.4),
+        0 0 40px rgba(30,144,255,0.25);
+    position: relative;
+    overflow: hidden;
+}
+
+.furina-special::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><circle cx="50" cy="40" r="3" fill="rgba(30,144,255,0.4)" opacity="0.8"/><circle cx="150" cy="60" r="2.5" fill="rgba(65,105,225,0.3)" opacity="0.7"/><circle cx="80" cy="120" r="2" fill="rgba(30,144,255,0.35)" opacity="0.6"/><circle cx="170" cy="140" r="1.8" fill="rgba(65,105,225,0.4)" opacity="0.5"/><path d="M30,30 Q50,10 70,30 Q90,50 110,30" stroke="rgba(30,144,255,0.3)" stroke-width="2" fill="none"/><path d="M120,80 Q140,60 160,80 Q180,100 200,80" stroke="rgba(65,105,225,0.25)" stroke-width="1.5" fill="none"/></svg>') repeat;
+    animation: waterFlow 15s linear infinite;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.furina-special .character-name {
+    background: linear-gradient(135deg, #1e90ff 0%, #4169e1 30%, #00bfff 60%, #1e90ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 
+        0 0 30px rgba(30,144,255,0.9),
+        2px 2px 8px rgba(0,0,0,0.8);
+    font-family: 'Cinzel', serif;
+    letter-spacing: 0.15em;
+    position: relative;
+    filter: drop-shadow(0 0 20px rgba(30,144,255,0.7));
+    font-style: italic;
+}
+
+.furina-special .character-name::before {
+    content: '🎭';
+    position: absolute;
+    left: -3rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    animation: theatricalSway 4s ease-in-out infinite;
+    opacity: 0.8;
+}
+
+.furina-special .character-name::after {
+    content: '💧';
+    position: absolute;
+    right: -2.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.8rem;
+    animation: waterDrop 3s ease-in-out infinite 1s;
+    opacity: 0.8;
+}
+
+.furina-special .character-title {
+    color: #87ceeb;
+    font-style: italic;
+    text-shadow: 
+        0 0 25px rgba(135,206,235,0.8),
+        1px 1px 4px rgba(0,0,0,0.6);
+    opacity: 0.95;
+    font-weight: 500;
+    font-family: 'Cinzel', serif;
+    letter-spacing: 0.05em;
+}
+
+.furina-special .character-status {
+    background: linear-gradient(135deg, 
+        rgba(30,144,255,0.12) 0%, 
+        rgba(25,35,55,0.9) 30%,
+        rgba(20,40,75,0.8) 70%,
+        rgba(65,105,225,0.08) 100%);
+    border: 2px solid rgba(30,144,255,0.35);
+    box-shadow: 
+        0 18px 40px rgba(0,0,0,0.5),
+        inset 0 1px 0 rgba(30,144,255,0.25),
+        0 0 30px rgba(30,144,255,0.18);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(8px);
+}
+
+.furina-special .character-status::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="30" r="2" fill="rgba(30,144,255,0.3)"/><circle cx="80" cy="50" r="1.5" fill="rgba(65,105,225,0.25)"/><circle cx="50" cy="80" r="1.8" fill="rgba(30,144,255,0.2)"/><path d="M10,60 Q30,40 50,60 Q70,80 90,60" stroke="rgba(30,144,255,0.2)" stroke-width="1" fill="none"/></svg>') repeat;
+    animation: gentleWaves 10s ease-in-out infinite;
+    z-index: 0;
+}
+
+.furina-special .character-story {
+    background: linear-gradient(135deg, 
+        rgba(30,144,255,0.1) 0%, 
+        rgba(25,35,55,0.95) 25%,
+        rgba(15,25,45,0.9) 75%,
+        rgba(65,105,225,0.06) 100%);
+    border-radius: 25px;
+    padding: 3rem;
+    border: 2px solid rgba(30,144,255,0.3);
+    box-shadow: 
+        0 15px 35px rgba(0,0,0,0.4),
+        inset 0 1px 0 rgba(30,144,255,0.2);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(5px);
+}
+
+.furina-special .character-story::before {
+    content: '🌊';
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+    font-size: 2.5rem;
+    opacity: 0.5;
+    animation: waveMotion 6s ease-in-out infinite;
+}
+
+.furina-special .character-story::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 50"><path d="M0,25 Q25,15 50,25 T100,25" stroke="rgba(30,144,255,0.15)" stroke-width="2" fill="none"/><path d="M0,35 Q25,25 50,35 T100,35" stroke="rgba(65,105,225,0.1)" stroke-width="1.5" fill="none"/></svg>') repeat-x bottom;
+    animation: flowingWater 12s linear infinite;
+    z-index: -1;
+}
+
+.furina-special .character-story h4 {
+    color: #1e90ff;
+    text-shadow: 
+        0 0 25px rgba(30,144,255,0.9),
+        2px 2px 6px rgba(0,0,0,0.7);
+    background: linear-gradient(135deg, #1e90ff 0%, #4169e1 50%, #00bfff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 0 15px rgba(30,144,255,0.6));
+    font-family: 'Cinzel', serif;
+    font-style: italic;
+    letter-spacing: 0.1em;
+}
+
+@keyframes waterFlow {
+    0% { transform: translateX(0px) translateY(0px) rotate(0deg); }
+    25% { transform: translateX(-8px) translateY(-4px) rotate(1deg); }
+    50% { transform: translateX(-5px) translateY(-8px) rotate(-1deg); }
+    75% { transform: translateX(-12px) translateY(-2px) rotate(0.5deg); }
+    100% { transform: translateX(-15px) translateY(0px) rotate(0deg); }
+}
+
+@keyframes theatricalSway {
+    0%, 100% { transform: translateY(-50%) rotate(0deg) scale(1); opacity: 0.8; }
+    25% { transform: translateY(-50%) rotate(-8deg) scale(1.1); opacity: 1; }
+    50% { transform: translateY(-50%) rotate(5deg) scale(0.95); opacity: 0.9; }
+    75% { transform: translateY(-50%) rotate(-3deg) scale(1.05); opacity: 1; }
+}
+
+@keyframes waterDrop {
+    0%, 100% { transform: translateY(-50%) scale(1); opacity: 0.8; }
+    25% { transform: translateY(-60%) scale(1.2); opacity: 1; }
+    50% { transform: translateY(-45%) scale(0.9); opacity: 0.9; }
+    75% { transform: translateY(-55%) scale(1.1); opacity: 1; }
+}
+
+@keyframes gentleWaves {
+    0% { transform: translateX(0px) scaleY(1); opacity: 0.4; }
+    50% { transform: translateX(-25px) scaleY(1.1); opacity: 0.7; }
+    100% { transform: translateX(-50px) scaleY(1); opacity: 0.4; }
+}
+
+@keyframes waveMotion {
+    0%, 100% { transform: translateY(0px) translateX(0px) rotate(0deg); }
+    25% { transform: translateY(-8px) translateX(-4px) rotate(-5deg); }
+    50% { transform: translateY(-5px) translateX(3px) rotate(3deg); }
+    75% { transform: translateY(-12px) translateX(-2px) rotate(-2deg); }
+}
+
+@keyframes flowingWater {
+    0% { transform: translateX(0px); }
+    100% { transform: translateX(-100px); }
+}
+
+/* レイラ専用スタイル */
+.layla-special {
+    background: linear-gradient(135deg, 
+        rgba(25,25,45,0.95) 0%, 
+        rgba(40,35,60,0.9) 25%,
+        rgba(30,25,55,0.95) 50%,
+        rgba(45,40,65,0.9) 75%,
+        rgba(20,20,40,0.95) 100%);
+    border: 2px solid rgba(173,216,230,0.5);
+    box-shadow: 
+        0 25px 50px rgba(0,0,0,0.7),
+        inset 0 1px 0 rgba(173,216,230,0.4),
+        0 0 40px rgba(173,216,230,0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.layla-special::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><circle cx="30" cy="40" r="2" fill="rgba(173,216,230,0.6)" opacity="0.8"><animate attributeName="opacity" values="0.3;0.8;0.3" dur="4s" repeatCount="indefinite"/></circle><circle cx="150" cy="60" r="1.5" fill="rgba(176,196,222,0.5)" opacity="0.7"><animate attributeName="opacity" values="0.2;0.7;0.2" dur="5s" repeatCount="indefinite"/></circle><circle cx="80" cy="120" r="1.8" fill="rgba(173,216,230,0.4)" opacity="0.6"><animate attributeName="opacity" values="0.4;0.9;0.4" dur="3s" repeatCount="indefinite"/></circle><circle cx="170" cy="140" r="1.2" fill="rgba(176,196,222,0.6)" opacity="0.5"><animate attributeName="opacity" values="0.1;0.6;0.1" dur="6s" repeatCount="indefinite"/></circle><path d="M20,30 L40,20 L35,35 Z" fill="rgba(173,216,230,0.4)"/><path d="M160,80 L180,70 L175,85 Z" fill="rgba(176,196,222,0.3)"/><path d="M60,150 L80,140 L75,155 Z" fill="rgba(173,216,230,0.35)"/></svg>') repeat;
+    animation: starConstellation 20s linear infinite;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.layla-special .character-name {
+    background: linear-gradient(135deg, #add8e6 0%, #b0c4de 30%, #e6e6fa 60%, #add8e6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 
+        0 0 25px rgba(173,216,230,0.8),
+        2px 2px 6px rgba(0,0,0,0.7);
+    font-family: 'Cinzel', serif;
+    letter-spacing: 0.1em;
+    position: relative;
+    filter: drop-shadow(0 0 15px rgba(173,216,230,0.6));
+    font-weight: 500;
+}
+
+.layla-special .character-name::before {
+    content: '⭐';
+    position: absolute;
+    left: -2.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.8rem;
+    animation: starTwinkle 3s ease-in-out infinite;
+    opacity: 0.8;
+}
+
+.layla-special .character-name::after {
+    content: '🌙';
+    position: absolute;
+    right: -2.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.6rem;
+    animation: moonPhase 4s ease-in-out infinite 1.5s;
+    opacity: 0.8;
+}
+
+.layla-special .character-title {
+    color: #b0c4de;
+    font-style: italic;
+    text-shadow: 
+        0 0 20px rgba(176,196,222,0.7),
+        1px 1px 3px rgba(0,0,0,0.6);
+    opacity: 0.9;
+    font-weight: 400;
+    font-family: 'Noto Sans JP', sans-serif;
+    letter-spacing: 0.05em;
+}
+
+.layla-special .character-status {
+    background: linear-gradient(135deg, 
+        rgba(173,216,230,0.1) 0%, 
+        rgba(25,25,45,0.9) 30%,
+        rgba(30,25,55,0.8) 70%,
+        rgba(176,196,222,0.08) 100%);
+    border: 2px solid rgba(173,216,230,0.3);
+    box-shadow: 
+        0 18px 40px rgba(0,0,0,0.5),
+        inset 0 1px 0 rgba(173,216,230,0.2),
+        0 0 30px rgba(173,216,230,0.15);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(6px);
+}
+
+.layla-special .character-status::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="30" r="1.5" fill="rgba(173,216,230,0.25)"/><circle cx="80" cy="50" r="1" fill="rgba(176,196,222,0.2)"/><circle cx="50" cy="80" r="1.2" fill="rgba(173,216,230,0.3)"/><path d="M30,60 Q50,40 70,60 Q90,80 110,60" stroke="rgba(173,216,230,0.15)" stroke-width="1" fill="none"/><polygon points="15,20 25,15 20,25" fill="rgba(176,196,222,0.2)"/><polygon points="75,35 85,30 80,40" fill="rgba(173,216,230,0.18)"/></svg>') repeat;
+    animation: driftingStars 12s ease-in-out infinite;
+    z-index: 0;
+}
+
+.layla-special .character-story {
+    background: linear-gradient(135deg, 
+        rgba(173,216,230,0.08) 0%, 
+        rgba(25,25,45,0.95) 25%,
+        rgba(20,20,40,0.9) 75%,
+        rgba(176,196,222,0.05) 100%);
+    border-radius: 25px;
+    padding: 3rem;
+    border: 2px solid rgba(173,216,230,0.25);
+    box-shadow: 
+        0 15px 35px rgba(0,0,0,0.4),
+        inset 0 1px 0 rgba(173,216,230,0.15);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(4px);
+}
+
+.layla-special .character-story::before {
+    content: '📚';
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+    font-size: 2.2rem;
+    opacity: 0.4;
+    animation: bookFloat 5s ease-in-out infinite;
+}
+
+.layla-special .character-story::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 50"><circle cx="20" cy="20" r="1" fill="rgba(173,216,230,0.1)"/><circle cx="80" cy="30" r="0.8" fill="rgba(176,196,222,0.08)"/><circle cx="50" cy="40" r="1.2" fill="rgba(173,216,230,0.12)"/><path d="M10,25 Q30,15 50,25 Q70,35 90,25" stroke="rgba(173,216,230,0.1)" stroke-width="1" fill="none"/></svg>') repeat;
+    animation: sleepyMist 15s linear infinite;
+    z-index: -1;
+}
+
+.layla-special .character-story h4 {
+    color: #add8e6;
+    text-shadow: 
+        0 0 20px rgba(173,216,230,0.8),
+        2px 2px 4px rgba(0,0,0,0.6);
+    background: linear-gradient(135deg, #add8e6 0%, #b0c4de 50%, #e6e6fa 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 0 12px rgba(173,216,230,0.5));
+    font-family: 'Cinzel', serif;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+}
+
+/* レイラ専用の星座エフェクト強化 */
+.layla-special .constellation-star {
+    color: #add8e6;
+    text-shadow: 0 0 8px rgba(173,216,230,0.8);
+    transition: all 0.3s ease;
+}
+
+.layla-special .constellation-star:hover {
+    transform: scale(1.2);
+    text-shadow: 0 0 15px rgba(173,216,230,1);
+}
+
+.layla-special .constellation-star.active {
+    color: #87ceeb;
+    text-shadow: 0 0 12px rgba(135,206,235,0.9);
+    animation: constellationGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes starConstellation {
+    0% { transform: translateX(0px) translateY(0px) rotate(0deg); }
+    25% { transform: translateX(-5px) translateY(-3px) rotate(1deg); }
+    50% { transform: translateX(-3px) translateY(-6px) rotate(-0.5deg); }
+    75% { transform: translateX(-8px) translateY(-2px) rotate(0.8deg); }
+    100% { transform: translateX(-10px) translateY(0px) rotate(0deg); }
+}
+
+@keyframes starTwinkle {
+    0%, 100% { transform: translateY(-50%) scale(1) rotate(0deg); opacity: 0.8; }
+    25% { transform: translateY(-50%) scale(1.3) rotate(15deg); opacity: 1; }
+    50% { transform: translateY(-50%) scale(0.9) rotate(-10deg); opacity: 0.9; }
+    75% { transform: translateY(-50%) scale(1.2) rotate(20deg); opacity: 1; }
+}
+
+@keyframes moonPhase {
+    0%, 100% { transform: translateY(-50%) scale(1); opacity: 0.8; filter: brightness(1); }
+    25% { transform: translateY(-50%) scale(1.1); opacity: 0.6; filter: brightness(0.8); }
+    50% { transform: translateY(-50%) scale(0.95); opacity: 1; filter: brightness(1.2); }
+    75% { transform: translateY(-50%) scale(1.05); opacity: 0.7; filter: brightness(0.9); }
+}
+
+@keyframes driftingStars {
+    0% { transform: translateX(0px) translateY(0px); opacity: 0.3; }
+    50% { transform: translateX(-30px) translateY(-10px); opacity: 0.6; }
+    100% { transform: translateX(-60px) translateY(0px); opacity: 0.3; }
+}
+
+@keyframes bookFloat {
+    0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.4; }
+    25% { transform: translateY(-5px) rotate(-2deg); opacity: 0.6; }
+    50% { transform: translateY(-8px) rotate(1deg); opacity: 0.5; }
+    75% { transform: translateY(-3px) rotate(-1deg); opacity: 0.7; }
+}
+
+@keyframes sleepyMist {
+    0% { transform: translateX(0px); opacity: 0.2; }
+    100% { transform: translateX(-100px); opacity: 0.2; }
+}
+
+@keyframes constellationGlow {
+    0% { transform: scale(1); opacity: 0.8; }
+    100% { transform: scale(1.1); opacity: 1; }
+}
+
+.status-section {
+    margin-bottom: 2rem;
+}
+
+.status-section:last-child {
+    margin-bottom: 0;
+}
+
+.status-section h5 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.2rem;
+    color: #ffd700;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10px rgba(255,215,0,0.4);
+}
+
+/* ステータスグリッド */
+.status-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.status-item {
+    background: linear-gradient(135deg, 
+        rgba(255,215,0,0.1) 0%, 
+        rgba(135,206,235,0.08) 100%);
+    padding: 1rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255,215,0,0.2);
+}
+
+.status-label {
+    display: block;
+    font-size: 0.9rem;
+    color: #c0d6df;
+    margin-bottom: 0.5rem;
+}
+
+.status-value {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #ffd700;
+    margin-bottom: 0.5rem;
+}
+
+.status-bar {
+    height: 6px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.status-fill {
+    height: 100%;
+    border-radius: 3px;
+    transition: width 1s ease;
+}
+
+.level-fill {
+    background: linear-gradient(90deg, #f39c12 0%, #e67e22 100%);
+    box-shadow: 0 0 8px rgba(243,156,18,0.6);
+}
+
+.friendship-fill {
+    background: linear-gradient(90deg, #e74c3c 0%, #c0392b 100%);
+    box-shadow: 0 0 8px rgba(231,76,60,0.6);
+}
+
+/* スキルグリッド */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.skill-item {
+    background: linear-gradient(135deg, 
+        rgba(255,215,0,0.15) 0%, 
+        rgba(135,206,235,0.1) 100%);
+    padding: 1rem;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid rgba(255,215,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.skill-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255,215,0,0.3);
+}
+
+.skill-icon {
+    display: block;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.skill-name {
+    display: block;
+    font-size: 0.9rem;
+    color: #c0d6df;
+    margin-bottom: 0.5rem;
+}
+
+.skill-level {
+    display: block;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #ffd700;
+    text-shadow: 0 0 8px rgba(255,215,0,0.5);
+}
+
+/* 命ノ星座 */
+.constellation-display {
+    text-align: center;
+}
+
+.constellation-level {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #ffd700;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10px rgba(255,215,0,0.5);
+}
+
+.constellation-stars {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.constellation-star {
+    font-size: 1.5rem;
+    color: #555;
+    transition: all 0.3s ease;
+}
+
+.constellation-star.active {
+    color: #ffd700;
+    text-shadow: 0 0 15px rgba(255,215,0,0.8);
+    animation: starGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes starGlow {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.1); text-shadow: 0 0 20px rgba(255,215,0,1); }
+}
+
+/* ストーリーセクション */
+.character-story {
+    margin-bottom: 3rem;
+}
+
+.character-story h4 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.5rem;
+    color: #ffd700;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 0 15px rgba(255,215,0,0.5);
+}
+
+.character-story p {
+    font-size: 1.1rem;
+    line-height: 1.9;
+    color: #c0d6df;
+    background: linear-gradient(135deg, 
+        rgba(10,14,26,0.7) 0%, 
+        rgba(26,31,46,0.5) 100%);
+    padding: 2rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255,215,0,0.2);
+}
+
+/* アビリティセクション */
+.character-abilities h4 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.5rem;
+    color: #ffd700;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 0 15px rgba(255,215,0,0.5);
+}
+
+.abilities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.ability-card {
+    background: linear-gradient(135deg, 
+        rgba(10,14,26,0.8) 0%, 
+        rgba(26,31,46,0.6) 100%);
+    padding: 2rem;
+    border-radius: 20px;
+    border: 1px solid rgba(135,206,235,0.3);
+    text-align: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.ability-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255,215,0,0.5);
+    box-shadow: 0 10px 25px rgba(255,215,0,0.2);
+}
+
+.ability-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    animation: abilityFloat 3s ease-in-out infinite;
+}
+
+@keyframes abilityFloat {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+}
+
+.ability-card h5 {
+    font-size: 1.2rem;
+    color: #e8f4f8;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.ability-card p {
+    color: #c0d6df;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* チーム編成セクション */
+.team-section {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, 
+        rgba(255,215,0,0.05) 0%, 
+        rgba(135,206,235,0.05) 50%, 
+        rgba(147,112,219,0.05) 100%);
+}
+
+.team-composition {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.team-card {
+    background: linear-gradient(135deg, 
+        rgba(26,31,46,0.95) 0%, 
+        rgba(42,47,62,0.9) 100%);
+    border-radius: 25px;
+    padding: 3rem;
+    box-shadow: 
+        0 20px 40px rgba(0,0,0,0.3),
+        inset 0 1px 0 rgba(255,215,0,0.2);
+    border: 2px solid rgba(255,215,0,0.3);
+    backdrop-filter: blur(15px);
+}
+
+.team-card h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.8rem;
+    color: #ffd700;
+    text-align: center;
+    margin-bottom: 2rem;
+    text-shadow: 0 0 15px rgba(255,215,0,0.5);
+}
+
+.team-members {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.team-member {
+    text-align: center;
+    background: linear-gradient(135deg, 
+        rgba(10,14,26,0.7) 0%, 
+        rgba(26,31,46,0.5) 100%);
+    padding: 1.5rem;
+    border-radius: 20px;
+    border: 1px solid rgba(135,206,235,0.3);
+    transition: all 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255,215,0,0.5);
+}
+
+.member-icon {
+    font-size: 3rem;
+    padding: 1rem;
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.member-icon.geo { background: linear-gradient(135deg, #f39c12, #e67e22); }
+.member-icon.anemo { background: linear-gradient(135deg, #4ecdc4, #44a08d); }
+.member-icon.hydro { background: linear-gradient(135deg, #3498db, #2980b9); }
+.member-icon.cryo { background: linear-gradient(135deg, #74b9ff, #0984e3); }
+
+.team-member span {
+    display: block;
+    font-weight: 600;
+    color: #e8f4f8;
+    margin-bottom: 0.5rem;
+}
+
+.team-member small {
+    color: #87ceeb;
+    font-size: 0.85rem;
+}
+
+.team-description {
+    text-align: center;
+    color: #c0d6df;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    background: linear-gradient(135deg, 
+        rgba(10,14,26,0.7) 0%, 
+        rgba(26,31,46,0.5) 100%);
+    padding: 2rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255,215,0,0.2);
+}
+
+/* Current Time セクション */
+.datetime-section {
+    background: linear-gradient(135deg, 
+        rgba(26,31,46,0.9) 0%, 
+        rgba(42,47,62,0.95) 100%);
+    padding: 4rem 0;
+    border-top: 2px solid rgba(255,215,0,0.3);
+}
+
+.datetime-section h3 {
+    font-family: 'Cinzel', serif;
+    color: #e8f4f8;
+    text-shadow: 0 0 20px rgba(255,215,0,0.5);
+}
+
+.datetime-display {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #ffd700;
+    background: linear-gradient(135deg, 
+        rgba(10,14,26,0.8) 0%, 
+        rgba(26,31,46,0.6) 100%);
+    padding: 2rem;
+    border-radius: 20px;
+    border: 2px solid rgba(255,215,0,0.4);
+    box-shadow: 
+        0 10px 30px rgba(0,0,0,0.3),
+        inset 0 1px 0 rgba(255,215,0,0.2);
+    backdrop-filter: blur(10px);
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+    text-shadow: 0 0 15px rgba(255,215,0,0.8);
+}
+
+/* フッター */
+.page-footer {
+    background: linear-gradient(135deg, 
+        rgba(10,14,26,0.95) 0%, 
+        rgba(26,31,46,0.9) 100%);
+    color: #c0d6df;
+    border-top: 2px solid rgba(255,215,0,0.3);
+    backdrop-filter: blur(15px);
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 2.5rem;
+    }
+    
+    .subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .character-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+    
+    .character-name {
+        font-size: 2rem;
+    }
+    
+    .character-icon-large {
+        font-size: 4rem;
+        width: 100px;
+        height: 100px;
+    }
+    
+    .abilities-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .status-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .constellation-stars {
+        flex-wrap: wrap;
+        gap: 0.3rem;
+    }
+    
+    .constellation-star {
+        font-size: 1.2rem;
+    }
+    
+    .team-members {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .heading-large {
+        font-size: 2rem;
+    }
+    
+    .intro-text,
+    .character-story p,
+    .team-description {
+        padding: 1.5rem;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .cover-characters {
+        min-height: 70vh;
+        padding: 2rem 1rem;
+    }
+    
+    .page-title {
+        font-size: 2rem;
+    }
+    
+    .character-detail {
+        padding: 2rem;
+        margin-bottom: 3rem;
+    }
+    
+    .character-specs {
+        justify-content: center;
+    }
+    
+    .character-status {
+        padding: 1.5rem;
+    }
+    
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .constellation-star {
+        font-size: 1rem;
+    }
+    
+    .team-members {
+        grid-template-columns: 1fr;
+    }
+    
+    .member-icon {
+        font-size: 2.5rem;
+        width: 60px;
+        height: 60px;
+    }
+}

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お問い合わせ - Contact</title>
+    <meta name="description" content="お問い合わせページです。ご質問やご連絡はこちらからお送りください。">
+    
+    <!-- ファビコン -->
+    <link rel="icon" type="image/png" href="image/kyoto-tech.png">
+    
+    <!-- リセットCSS -->
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    
+    <!-- Googleフォント -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Philosopher&display=swap"
+      rel="stylesheet"/>
+    
+    <!-- オリジナルCSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/contact.css">
+</head>
+
+<body>
+    <div class="cover cover-home">
+        <header class="page-header wrapper">
+            <h1 class="align-center">
+                <a href="index.html">
+                    <img src="image/ho-mugazou.png" alt="ロゴ画像" class="rotating-logo">
+                </a>
+            </h1>
+            <nav>
+                <ul class="main-nav font-english">
+                    <li><a href="index.html">ホーム</a></li>
+                    <li><a href="profile.html">プロフィール</a></li>
+                    <li><a href="hobby.html">趣味</a></li>
+                    <li><a href="game.html">ゲーム</a></li>
+                    <li><a href="contact.html">連絡先</a></li>
+                </ul>
+            </nav>
+        </header>
+        <h2 class="page-title font-english">Contact</h2>
+    </div>
+
+    <!-- メインコンテンツ -->
+    <main class="main-content">
+        <section class="about">
+            <div class="wrapper">
+                <h3 class="heading-large font-english">お問い合わせ</h3>
+                <p class="about-description">
+                    ご質問やご相談がございましたら、お気軽にお問い合わせください。
+                </p>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <div class="wrapper">
+                <div class="contact-container">
+                    <!-- お問い合わせフォーム -->
+                    <div class="contact-form-wrapper">
+                        <h2 class="section-title">メッセージを送る</h2>
+                        <form class="contact-form" action="#" method="post">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name" class="form-label">お名前 <span class="required">*</span></label>
+                                    <input type="text" id="name" name="name" class="form-input" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email" class="form-label">メールアドレス <span class="required">*</span></label>
+                                    <input type="email" id="email" name="email" class="form-input" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject" class="form-label">件名 <span class="required">*</span></label>
+                                <input type="text" id="subject" name="subject" class="form-input" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="category" class="form-label">お問い合わせ種別</label>
+                                <select id="category" name="category" class="form-select">
+                                    <option value="">選択してください</option>
+                                    <option value="general">一般的なお問い合わせ</option>
+                                    <option value="business">お仕事のご相談</option>
+                                    <option value="technical">技術的なご質問</option>
+                                    <option value="other">その他</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message" class="form-label">メッセージ <span class="required">*</span></label>
+                                <textarea id="message" name="message" rows="6" class="form-textarea" placeholder="お気軽にメッセージをお送りください..." required></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <button type="submit" class="submit-btn">
+                                    <span class="btn-text">送信する</span>
+                                    <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M22 2L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- 連絡先情報 -->
+                    <div class="contact-info">
+                        <h2 class="section-title">その他の連絡方法</h2>
+                        
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <div class="info-content">
+                                <h3>メール</h3>
+                                <p>example@email.com</p>
+                            </div>
+                        </div>
+
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 11C9 12.66 10.34 14 12 14C13.66 14 15 12.66 15 11V5C15 3.34 13.66 2 12 2C10.34 2 9 3.34 9 5V11Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M5 11C5 15.97 8.58 20 12 20C15.42 20 19 15.97 19 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <line x1="12" y1="20" x2="12" y2="22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <div class="info-content">
+                                <h3>SNS</h3>
+                                <p>お気軽にフォローしてください</p>
+                            </div>
+                        </div>
+
+                        <div class="response-time">
+                            <h3>📅 返信について</h3>
+                            <p>通常24時間以内にご返信いたします。<br>お急ぎの場合は件名に「急用」とご記載ください。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Current Time セクション -->
+        <section class="datetime-section">
+            <div class="wrapper">
+                <h3 class="heading-large font-english">Current Time</h3>
+                <div class="datetime-display">
+                    <div id="datetime">読み込み中...</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- フッター -->
+    <footer class="page-footer">
+        <div class="wrapper">
+            <p>&copy; 2025 永井 心</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Current Time 表示機能
+        function updateDateTime() {
+            const now = new Date();
+            const formattedDate = now.toLocaleString('ja-JP', {
+                year: 'numeric',
+                month: '2-digit',
+                day: '2-digit',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: false
+            });
+            document.getElementById('datetime').textContent = formattedDate;
+        }
+
+        // 初回表示
+        updateDateTime();
+
+        // 1秒ごとに更新
+        setInterval(updateDateTime, 1000);
+
+        // フォーム送信時のアニメーション
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = document.querySelector('.submit-btn');
+            const originalText = btn.innerHTML;
+            
+            btn.innerHTML = '<span class="btn-text">送信中...</span>';
+            btn.disabled = true;
+            
+            // 実際の送信処理をここに追加
+            setTimeout(() => {
+                btn.innerHTML = '<span class="btn-text">送信完了!</span>';
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.disabled = false;
+                    // フォームをリセット
+                    this.reset();
+                }, 1500);
+            }, 2000);
+        });
+
+        // 入力時のフォーカスエフェクト
+        document.querySelectorAll('.form-input, .form-textarea, .form-select').forEach(input => {
+            input.addEventListener('focus', function() {
+                this.parentElement.classList.add('focused');
+            });
+            
+            input.addEventListener('blur', function() {
+                if (this.value === '') {
+                    this.parentElement.classList.remove('focused');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,853 @@
+/* FGO.css - RPG Style */
+body {
+  font-family: "Cinzel", "Times New Roman", serif;
+  background-color: #1a0a0a;
+  color: #fffaf0;
+  line-height: 2.0;
+  padding: 30px;
+  font-size: 18px;
+  background-image: url('../image/haikei.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  text-shadow: 
+    -1px -1px 2px rgba(0, 0, 0, 0.8),
+    1px -1px 2px rgba(0, 0, 0, 0.8),
+    -1px 1px 2px rgba(0, 0, 0, 0.8),
+    1px 1px 2px rgba(0, 0, 0, 0.8);
+  border: 3px solid #8b4513;
+  border-radius: 15px;
+  box-shadow: 
+    inset 0 0 50px rgba(139, 69, 19, 0.3),
+    0 0 30px rgba(244, 241, 222, 0.2);
+  margin: 20px;
+}
+
+/* ナビゲーションスタイル */
+nav {
+  background: linear-gradient(145deg, #3e2723, #5d4037);
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  border: 2px solid #8d6e63;
+  box-shadow: 
+    0 4px 8px rgba(0, 0, 0, 0.5),
+    inset 0 2px 4px rgba(255, 255, 255, 0.1);
+  text-align: center;
+}
+
+nav a {
+  color: #ffecb3;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0 20px;
+  padding: 10px 20px;
+  border: 2px solid #ff8f00;
+  border-radius: 25px;
+  background: linear-gradient(145deg, #ff8f00, #e65100);
+  display: inline-block;
+  transition: all 0.3s ease;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+nav a:hover {
+  background: linear-gradient(145deg, #ffb300, #ff6f00);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+  color: #fff;
+}
+
+.grand-order {
+  font-size: 32px;
+  font-weight: bold;
+  color: #ffd700;
+  text-shadow: 
+    -2px -2px 0 #8b0000,
+    2px -2px 0 #8b0000,
+    -2px 2px 0 #8b0000,
+    2px 2px 0 #8b0000,
+    0px 0px 20px rgba(255, 215, 0, 0.8),
+    0px 0px 40px rgba(255, 215, 0, 0.4);
+  letter-spacing: 3px;
+  font-family: "Cinzel", "Times New Roman", serif;
+  display: inline-block;
+  background: linear-gradient(45deg, rgba(139, 0, 0, 0.3), rgba(255, 215, 0, 0.1));
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: 2px solid #8b0000;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 
+      -2px -2px 0 #8b0000,
+      2px -2px 0 #8b0000,
+      -2px 2px 0 #8b0000,
+      2px 2px 0 #8b0000,
+      0px 0px 20px rgba(255, 215, 0, 0.8);
+  }
+  to {
+    text-shadow: 
+      -2px -2px 0 #8b0000,
+      2px -2px 0 #8b0000,
+      -2px 2px 0 #8b0000,
+      2px 2px 0 #8b0000,
+      0px 0px 30px rgba(255, 215, 0, 1),
+      0px 0px 60px rgba(255, 215, 0, 0.6);
+  }
+}
+
+/* ストーリーコンテンツのスタイル */
+.story-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+.story-section {
+  margin-bottom: 35px;
+  padding: 25px;
+  background: rgba(61, 39, 35, 0.4);
+  border-radius: 12px;
+  border-left: 5px solid #ffd700;
+  backdrop-filter: blur(2px);
+}
+
+.story-section p {
+  margin: 20px 0;
+  line-height: 2.2;
+  font-size: 18px;
+}
+
+.story-year {
+  color: #ffd700;
+  font-weight: bold;
+  font-size: 22px;
+  text-shadow: 
+    -1px -1px 2px rgba(0, 0, 0, 0.9),
+    1px -1px 2px rgba(0, 0, 0, 0.9),
+    -1px 1px 2px rgba(0, 0, 0, 0.9),
+    1px 1px 2px rgba(0, 0, 0, 0.9),
+    0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.organization-name {
+  color: #ff6b35;
+  font-weight: bold;
+  font-size: 24px;
+  text-align: center;
+  text-shadow: 
+    -1px -1px 2px rgba(0, 0, 0, 0.9),
+    1px -1px 2px rgba(0, 0, 0, 0.9),
+    -1px 1px 2px rgba(0, 0, 0, 0.9),
+    1px 1px 2px rgba(0, 0, 0, 0.9),
+    0 0 8px rgba(255, 107, 53, 0.4);
+  margin: 25px 0;
+}
+
+.timeline {
+  background: rgba(139, 69, 19, 0.3);
+  border-left-color: #ff6b35;
+}
+
+.timeline-item {
+  color: #fffaf0;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 215, 0, 0.4);
+  font-family: "Courier New", monospace;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.timeline-item:last-child {
+  border-bottom: none;
+}
+
+.location {
+  color: #ff6b35;
+  font-weight: bold;
+  text-align: center;
+  font-size: 20px;
+  text-shadow: 
+    -1px -1px 2px rgba(0, 0, 0, 0.9),
+    1px -1px 2px rgba(0, 0, 0, 0.9),
+    -1px 1px 2px rgba(0, 0, 0, 0.9),
+    1px 1px 2px rgba(0, 0, 0, 0.9),
+    0 0 8px rgba(255, 107, 53, 0.4);
+}
+
+.grand-order-section {
+  background: linear-gradient(135deg, rgba(139, 0, 0, 0.5), rgba(255, 215, 0, 0.15));
+  border: 3px solid #ffd700;
+  text-align: center;
+  padding: 35px;
+  backdrop-filter: blur(3px);
+}
+
+.grand-order-title {
+  font-size: 26px;
+  margin: 25px 0;
+  line-height: 1.6;
+}
+
+.story-conclusion {
+  color: #ffd700;
+  font-weight: bold;
+  font-size: 20px;
+  text-shadow: 
+    -1px -1px 2px rgba(0, 0, 0, 0.9),
+    1px -1px 2px rgba(0, 0, 0, 0.9),
+    -1px 1px 2px rgba(0, 0, 0, 0.9),
+    1px 1px 2px rgba(0, 0, 0, 0.9),
+    0 0 10px rgba(255, 215, 0, 0.5);
+  margin-top: 30px;
+  line-height: 1.8;
+}
+
+/* RPG風のテキスト装飾 */
+body::before {
+  content: "⚔️ 運命の物語 ⚔️";
+  display: block;
+  text-align: center;
+  font-size: 20px;
+  color: #ffd700;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* キャラクターセクションのスタイル */
+.character-section {
+  margin: 30px 0;
+  background: linear-gradient(145deg, rgba(61, 39, 35, 0.8), rgba(93, 64, 55, 0.6));
+  border: 3px solid #8d6e63;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 
+    0 8px 16px rgba(0, 0, 0, 0.5),
+    inset 0 2px 4px rgba(255, 255, 255, 0.1);
+}
+
+.section-title {
+  color: #ffd700;
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+  text-shadow: 
+    -1px -1px 0 #8b0000,
+    1px -1px 0 #8b0000,
+    -1px 1px 0 #8b0000,
+    1px 1px 0 #8b0000,
+    0px 0px 10px rgba(255, 215, 0, 0.6);
+  font-weight: bold;
+  padding: 10px;
+  background: rgba(139, 0, 0, 0.2);
+  border-radius: 10px;
+  border: 2px solid rgba(255, 215, 0, 0.3);
+}
+
+.character-box {
+  background: rgba(26, 10, 10, 0.7);
+  border: 2px solid #654321;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 15px 0;
+  box-shadow: inset 0 0 20px rgba(101, 67, 33, 0.3);
+}
+
+.servant-card {
+  background: linear-gradient(135deg, rgba(139, 0, 0, 0.4), rgba(255, 215, 0, 0.1));
+  border: 3px solid transparent;
+  border-radius: 15px;
+  padding: 20px;
+  margin: 40px 20px;
+  min-height: 380px;
+  box-shadow: 
+    0 8px 16px rgba(0, 0, 0, 0.4),
+    inset 0 1px 3px rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.servant-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(255, 215, 0, 0.1), rgba(255, 107, 53, 0.1), rgba(139, 0, 0, 0.1));
+  border-radius: 15px;
+  z-index: -1;
+}
+
+.servant-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 
+    0 12px 24px rgba(0, 0, 0, 0.5),
+    0 0 30px rgba(255, 215, 0, 0.3),
+    inset 0 1px 5px rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 215, 0, 0.8);
+}
+
+.servant-card::after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  border-radius: 10px;
+  pointer-events: none;
+}
+
+.servant-card h3 {
+  color: #ffd700;
+  margin-top: 0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  font-size: 20px;
+}
+
+/* サーバント画像のスタイル */
+.servant-image {
+  width: 100px;
+  height: 140px;
+  border-radius: 0;
+  border: 5px solid transparent;
+  background: linear-gradient(45deg, #ffd700, #ff6b35, #8b0000, #ffd700);
+  padding: 4px;
+  margin: 0 auto 15px;
+  display: block;
+  object-fit: cover;
+  box-shadow: 
+    0 0 25px rgba(255, 215, 0, 0.7),
+    0 0 50px rgba(255, 107, 53, 0.5),
+    inset 0 0 15px rgba(255, 255, 255, 0.3),
+    0 8px 16px rgba(0, 0, 0, 0.4);
+  transition: all 0.4s ease;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.servant-image::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  right: -8px;
+  bottom: -8px;
+  background: linear-gradient(45deg, #ffd700, #ff6b35, #8b0000, #ffd700, #ffd700);
+  border-radius: 0;
+  z-index: -1;
+  filter: blur(10px);
+  opacity: 0.8;
+}
+
+.servant-image::after {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border: 2px solid rgba(255, 215, 0, 0.6);
+  box-shadow: 
+    inset 0 0 10px rgba(255, 215, 0, 0.3),
+    0 0 20px rgba(255, 215, 0, 0.4);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.servant-image:hover {
+  transform: scale(1.03) rotateY(3deg) rotateX(2deg);
+  box-shadow: 
+    0 0 35px rgba(255, 215, 0, 0.9),
+    0 0 70px rgba(255, 107, 53, 0.7),
+    0 12px 24px rgba(0, 0, 0, 0.6),
+    inset 0 0 20px rgba(255, 255, 255, 0.4);
+  border-color: #ffd700;
+}
+
+/* コメントボックスのスタイル（既存の一言コメント） */
+.comment-box {
+  background: rgba(139, 0, 0, 0.2);
+  border-left: 4px solid #ffd700;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  font-style: italic;
+  position: relative;
+  z-index: 10;
+}
+
+.comment-box p {
+  margin: 0;
+  color: #ffecb3;
+  font-size: 14px;
+}
+
+/* 新しい浮遊コメント用のスタイル */
+.floating-comment {
+  position: absolute;
+  background: rgba(255, 215, 0, 0.15);
+  border: 2px solid rgba(255, 215, 0, 0.6);
+  border-radius: 10px;
+  padding: 10px 15px;
+  font-size: 14px;
+  color: #ffd700;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  white-space: nowrap;
+  z-index: 3;
+  box-shadow: 
+    0 3px 6px rgba(0, 0, 0, 0.3),
+    0 0 10px rgba(255, 215, 0, 0.2);
+  transform-origin: center;
+  transition: all 0.3s ease;
+}
+
+.floating-comment:hover {
+  transform: scale(1.1);
+  background: rgba(255, 215, 0, 0.25);
+  box-shadow: 
+    0 4px 8px rgba(0, 0, 0, 0.4),
+    0 0 15px rgba(255, 215, 0, 0.4);
+}
+
+/* 4つのコメント位置（左右に2つずつ配置） */
+.floating-comment.left-top {
+  top: 70px;
+  left: 15px;
+}
+
+.floating-comment.left-bottom {
+  top: 140px;
+  left: 15px;
+}
+
+.floating-comment.right-top {
+  top: 70px;
+  right: 15px;
+}
+
+.floating-comment.right-bottom {
+  top: 140px;
+  right: 15px;
+}
+
+/* クリック可能な画像のスタイル */
+.clickable-image {
+  cursor: pointer;
+}
+
+.clickable-image:hover {
+  filter: brightness(1.2);
+}
+
+/* モーダルのスタイル */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  padding-top: 50px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 80%;
+  max-height: 80%;
+  border: 5px solid #ffd700;
+  box-shadow: 
+    0 0 50px rgba(255, 215, 0, 0.8),
+    0 0 100px rgba(255, 107, 53, 0.6);
+  animation: modalZoom 0.3s ease;
+}
+
+@keyframes modalZoom {
+  from {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.modal-caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ffd700;
+  padding: 20px 0;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #ffd700;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+  cursor: pointer;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.close:hover,
+.close:focus {
+  color: #ff6b35;
+  text-decoration: none;
+}
+
+/* ホームボタンのスタイル - FGO魔術陣デザイン */
+.home-button {
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  background: 
+    radial-gradient(circle at center, rgba(139, 0, 0, 0.7) 0%, rgba(255, 215, 0, 0.6) 50%, rgba(139, 0, 0, 0.7) 100%),
+    conic-gradient(from 0deg, rgba(255, 215, 0, 0.2), rgba(255, 107, 53, 0.2), rgba(139, 0, 0, 0.2), rgba(255, 215, 0, 0.2));
+  border: 3px solid rgba(255, 215, 0, 0.8);
+  border-radius: 50%;
+  width: 90px;
+  height: 90px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: bold;
+  font-size: 11px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  box-shadow: 
+    0 0 25px rgba(255, 215, 0, 0.4),
+    0 0 50px rgba(255, 215, 0, 0.3),
+    0 0 75px rgba(139, 0, 0, 0.2),
+    inset 0 0 25px rgba(255, 215, 0, 0.15);
+  transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  z-index: 1000;
+  backdrop-filter: blur(8px);
+  text-shadow: 
+    0 0 5px rgba(255, 215, 0, 0.7),
+    0 0 10px rgba(255, 215, 0, 0.4),
+    0 0 15px rgba(255, 215, 0, 0.2);
+  overflow: visible;
+  cursor: pointer;
+  opacity: 0.85;
+}
+
+.home-button:hover {
+  background: 
+    radial-gradient(circle at center, rgba(255, 215, 0, 0.9) 0%, rgba(255, 107, 53, 0.8) 50%, rgba(255, 215, 0, 0.9) 100%),
+    conic-gradient(from 180deg, rgba(255, 215, 0, 0.4), rgba(255, 255, 255, 0.3), rgba(255, 107, 53, 0.4), rgba(255, 215, 0, 0.4));
+  transform: scale(1.15) rotate(360deg);
+  box-shadow: 
+    0 0 40px rgba(255, 215, 0, 0.7),
+    0 0 80px rgba(255, 215, 0, 0.5),
+    0 0 120px rgba(255, 107, 53, 0.4),
+    inset 0 0 40px rgba(255, 255, 255, 0.3);
+  color: rgba(26, 10, 10, 0.9);
+  border-color: rgba(255, 236, 179, 0.9);
+  animation: commandSpellPulse 2s ease-in-out infinite;
+  opacity: 1;
+  backdrop-filter: blur(12px);
+}
+
+.home-text {
+  font-family: "Cinzel", "Times New Roman", serif;
+  letter-spacing: 1px;
+  font-size: 10px;
+  text-align: center;
+  z-index: 3;
+  text-transform: uppercase;
+  font-weight: 700;
+  transition: opacity 0.3s ease;
+}
+
+.hover-text {
+  position: absolute;
+  font-family: "Cinzel", "Times New Roman", serif;
+  letter-spacing: 1px;
+  font-size: 12px;
+  text-align: center;
+  z-index: 4;
+  text-transform: uppercase;
+  font-weight: 700;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  color: #fff;
+  text-shadow: 
+    0 0 8px rgba(255, 215, 0, 0.9),
+    0 0 16px rgba(255, 215, 0, 0.6),
+    0 0 24px rgba(255, 215, 0, 0.3);
+}
+
+.home-button:hover .home-text {
+  opacity: 0;
+  transform: scale(0.5);
+}
+
+.home-button:hover .hover-text {
+  opacity: 1;
+  transform: scale(1);
+  color: #1a0a0a;
+  text-shadow: 
+    0 0 8px rgba(255, 255, 255, 0.9),
+    0 0 16px rgba(255, 215, 0, 0.6),
+    2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* 魔術陣エフェクト */
+.magic-circle {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  border: 2px solid rgba(255, 215, 0, 0.5);
+  border-radius: 50%;
+  border-style: dashed;
+  border-spacing: 10px;
+  animation: rotate 6s linear infinite;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  background: 
+    conic-gradient(from 0deg, transparent 85%, rgba(255, 215, 0, 0.2) 90%, transparent 95%),
+    conic-gradient(from 120deg, transparent 85%, rgba(255, 215, 0, 0.2) 90%, transparent 95%),
+    conic-gradient(from 240deg, transparent 85%, rgba(255, 215, 0, 0.2) 90%, transparent 95%);
+}
+
+.magic-circle-inner {
+  position: absolute;
+  top: -12px;
+  left: -12px;
+  right: -12px;
+  bottom: -12px;
+  border: 1px solid rgba(255, 107, 53, 0.6);
+  border-radius: 50%;
+  border-style: dotted;
+  animation: rotate-reverse 4s linear infinite;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  background: 
+    radial-gradient(circle at 30% 30%, rgba(255, 215, 0, 0.15) 2px, transparent 3px),
+    radial-gradient(circle at 70% 30%, rgba(255, 215, 0, 0.15) 2px, transparent 3px),
+    radial-gradient(circle at 50% 70%, rgba(255, 215, 0, 0.15) 2px, transparent 3px),
+    radial-gradient(circle at 30% 70%, rgba(255, 215, 0, 0.15) 2px, transparent 3px),
+    radial-gradient(circle at 70% 70%, rgba(255, 215, 0, 0.15) 2px, transparent 3px);
+}
+
+.home-button:hover .magic-circle,
+.home-button:hover .magic-circle-inner {
+  opacity: 0.8;
+}
+
+/* 魔力パーティクル - コマンドスペル風 */
+.magic-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: radial-gradient(circle, #ffd700, #ff6b35);
+  border-radius: 50%;
+  opacity: 0;
+  box-shadow: 
+    0 0 6px rgba(255, 215, 0, 0.8),
+    0 0 12px rgba(255, 215, 0, 0.4);
+}
+
+.home-button:hover .particle {
+  animation: commandSpellSparkle 3s ease-in-out infinite;
+}
+
+.particle:nth-child(1) {
+  top: 15%;
+  left: 25%;
+  animation-delay: 0s;
+}
+
+.particle:nth-child(2) {
+  top: 25%;
+  right: 20%;
+  animation-delay: 0.6s;
+}
+
+.particle:nth-child(3) {
+  bottom: 30%;
+  left: 20%;
+  animation-delay: 1.2s;
+}
+
+.particle:nth-child(4) {
+  bottom: 20%;
+  right: 25%;
+  animation-delay: 1.8s;
+}
+
+.particle:nth-child(5) {
+  top: 45%;
+  left: 10%;
+  animation-delay: 2.4s;
+}
+
+/* FGO風アニメーション */
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes rotate-reverse {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+@keyframes levitate {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  25% { transform: translateY(-3px) rotate(2deg); }
+  50% { transform: translateY(-6px) rotate(0deg); }
+  75% { transform: translateY(-3px) rotate(-2deg); }
+}
+
+@keyframes commandSpellPulse {
+  0%, 100% { 
+    box-shadow: 
+      0 0 40px rgba(255, 215, 0, 0.9),
+      0 0 80px rgba(255, 215, 0, 0.7),
+      0 0 120px rgba(255, 107, 53, 0.5);
+  }
+  50% { 
+    box-shadow: 
+      0 0 50px rgba(255, 215, 0, 1),
+      0 0 100px rgba(255, 215, 0, 0.9),
+      0 0 150px rgba(255, 107, 53, 0.7);
+  }
+}
+
+@keyframes commandSpellSparkle {
+  0%, 100% { 
+    opacity: 0;
+    transform: scale(0) translateY(0px) rotate(0deg);
+  }
+  33% { 
+    opacity: 0.8;
+    transform: scale(1.2) translateY(-15px) rotate(120deg);
+  }
+  66% { 
+    opacity: 1;
+    transform: scale(0.8) translateY(-25px) rotate(240deg);
+  }
+}
+
+/* モバイル対応 */
+@media (max-width: 768px) {
+  .home-button {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 80px;
+    height: 80px;
+    font-size: 9px;
+    opacity: 0.8;
+  }
+  
+  .magic-circle {
+    top: -16px;
+    left: -16px;
+    right: -16px;
+    bottom: -16px;
+  }
+  
+  .magic-circle-inner {
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+  }
+}
+
+/* 悔しいアイコンのスタイル */
+.kuyasi-icon {
+  width: 80px;
+  height: 80px;
+  float: right;
+  clear: both;
+  margin-top: 10px;
+  margin-left: 10px;
+  filter: drop-shadow(6px 6px 12px rgba(0, 0, 0, 0.8));
+  animation: kuyasi-bounce 1s infinite ease-in-out;
+  transform-origin: center bottom;
+}
+
+@keyframes kuyasi-bounce {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  25% {
+    transform: translateY(-8px) scale(1.15);
+  }
+  50% {
+    transform: translateY(-12px) scale(1.25);
+  }
+  75% {
+    transform: translateY(-5px) scale(1.1);
+  }
+}
+
+/* 喜びのアイコンのスタイル */
+.yorokobi-icon {
+  width: 80px;
+  height: 80px;
+  float: left;
+  clear: both;
+  margin-top: 10px;
+  margin-right: 10px;
+  filter: drop-shadow(6px 6px 12px rgba(255, 215, 0, 0.6));
+  animation: yorokobi-spin 2s infinite ease-in-out;
+  transform-origin: center;
+}
+
+@keyframes yorokobi-spin {
+  0%, 100% {
+    transform: rotate(0deg) scale(1);
+  }
+  25% {
+    transform: rotate(10deg) scale(1.1);
+  }
+  50% {
+    transform: rotate(-5deg) scale(1.2);
+  }
+  75% {
+    transform: rotate(15deg) scale(1.05);
+  }
+}

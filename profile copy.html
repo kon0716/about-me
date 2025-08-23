@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile - 永井 心</title>
+    <meta
+        name="description"
+        content="永井心のプロフィールページ。ホワイトハッカー専攻の学生としての経歴や趣味、スキルについて紹介します。"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--ファビコン-->
+    <link rel="icon" type="images/png" href="image/kyoto-tech.png"/>
+
+    <!--リセットcss-->
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+
+    <!--Googleフォント-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Philosopher&display=swap"
+      rel="stylesheet"/>
+
+    <!--オリジナルcss-->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/profile.css">
+</head>
+
+<body>
+    <div class="cover cover-home">
+        <header class="page-header wrapper">
+            <h1 class="align-center">
+                <a href="index.html">
+                    <img src="image/ho-mugazou.png" alt="ロゴ画像" class="rotating-logo">
+                </a>
+            </h1>
+            <nav>
+                <ul class="main-nav font-english">
+                    <li><a href="index.html">ホーム</a></li>
+                    <li><a href="profile.html">プロフィール</a></li>
+                    <li><a href="hobby.html">趣味</a></li>
+                    <li><a href="game.html">ゲーム</a></li>
+                    <li><a href="contact.html">連絡先</a></li>
+                </ul>
+            </nav>
+        </header>
+        <h2 class="page-title font-english">Profile</h2>
+    </div>
+
+    <main class="main-content">
+        <section class="profile-intro">
+            <div class="wrapper">
+                <h3 class="heading-large font-english">自己紹介</h3>
+                <p class="intro-text">
+                    ホワイトハッカー専攻の学生として、サイバーセキュリティの分野で活動しています。<br>
+                    ゲーム開発や音楽、料理など多彩な趣味を持ち、日々新しいことに挑戦しています。
+                </p>
+            </div>
+        </section>
+
+        <section class="profile-details">
+            <div class="wrapper">
+                <div class="profile-grid">
+                    <!-- 基本情報 -->
+                    <div class="profile-card">
+                        <h4 class="card-title">基本情報</h4>
+                        <div class="info-list">
+                            <div class="info-item">
+                                <span class="label">名前</span>
+                                <span class="value">永井 心</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">専攻</span>
+                                <span class="value">ホワイトハッカー専攻</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">学年</span>
+                                <span class="value">大学生</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">出身地</span>
+                                <span class="value">京都府</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">MBTI</span>
+                                <span class="value">INFJ</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">持ってるもの</span>
+                                <span class="value">漢検準二級、そろばん三級、暗算準二級</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 趣味・興味 -->
+                    <div class="profile-card">
+                        <h4 class="card-title">趣味・興味</h4>
+                        <div class="hobby-list">
+                            <div class="hobby-item">
+                                <span class="hobby-icon">🎮</span>
+                                <div class="hobby-content">
+                                    <h5>ゲーム</h5>
+                                    <p>RPG、アクション、パズルゲームなど幅広いジャンルを楽しんでいます。特にFGOが好きです。</p>
+                                </div>
+                            </div>
+                            <div class="hobby-item">
+                                <span class="hobby-icon">🎵</span>
+                                <div class="hobby-content">
+                                    <h5>音楽</h5>
+                                    <p>様々なジャンルの音楽を聴くのが好きで、作業中のBGMとしても重宝しています。</p>
+                                </div>
+                            </div>
+                            <div class="hobby-item">
+                                <span class="hobby-icon">🐟</span>
+                                <div class="hobby-content">
+                                    <h5>料理</h5>
+                                    <p>新鮮な魚を捌いて料理するのが趣味。いろいろな料理に挑戦しています。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="datetime-section">
+            <div class="wrapper">
+                <h3 class="heading-large font-english">Current Time</h3>
+                <div class="datetime-display">
+                    <div id="datetime">読み込み中...</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="page-footer">
+        <div class="wrapper">
+            <p>&copy; 2025 永井 心</p>
+        </div>
+    </footer>
+
+    <script>
+        function updateDateTime() {
+            const now = new Date();
+            const formattedDate = now.toLocaleString('ja-JP', {
+                year: 'numeric',
+                month: '2-digit',
+                day: '2-digit',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: false
+            });
+            document.getElementById('datetime').textContent = formattedDate;
+        }
+
+        // 初回表示
+        updateDateTime();
+
+        // 1秒ごとに更新
+        setInterval(updateDateTime, 1000);
+    </script>
+</body>
+</html>

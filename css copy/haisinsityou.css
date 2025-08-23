@@ -1,0 +1,324 @@
+/* Haisinsityou Page Specific Styles */
+
+/* カバー背景 */
+.cover-streaming {
+    background: linear-gradient(135deg, rgba(147, 51, 234, 0.8), rgba(79, 70, 229, 0.8)),
+                url(../image/ametyan.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* パンくずナビ */
+.breadcrumb {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 1rem 0;
+}
+
+.breadcrumb-nav {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.breadcrumb-nav a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.breadcrumb-nav a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+.breadcrumb-nav span:not(:last-child) {
+    color: #999;
+}
+
+/* イントロセクション */
+.intro-section {
+    padding: 3rem 0;
+    background: linear-gradient(135deg, rgba(147, 51, 234, 0.1), rgba(79, 70, 229, 0.1));
+    text-align: center;
+}
+
+.intro-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.intro-text {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #444;
+    margin-top: 1.5rem;
+}
+
+/* 実況者セクション */
+.streamer-section {
+    padding: 4rem 0;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.streamer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.streamer-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.streamer-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    border-color: rgba(147, 51, 234, 0.3);
+}
+
+.streamer-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.streamer-card h4 {
+    font-size: 1.4rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-family: 'Philosopher', serif;
+}
+
+.streamer-description {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.streamer-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.tag {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* 視聴スタイルセクション */
+.style-section {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, rgba(79, 70, 229, 0.1), rgba(147, 51, 234, 0.1));
+}
+
+.style-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.style-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 5px solid;
+}
+
+.style-card.active-watching {
+    border-left-color: #ff6b6b;
+}
+
+.style-card.passive-watching {
+    border-left-color: #4ecdc4;
+}
+
+.style-card.archive-watching {
+    border-left-color: #45b7d1;
+}
+
+.style-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.style-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.style-card h4 {
+    font-size: 1.3rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-family: 'Philosopher', serif;
+}
+
+.style-card p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.style-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.style-card li {
+    color: #777;
+    padding: 0.3rem 0;
+    position: relative;
+    padding-left: 1.2rem;
+}
+
+.style-card li::before {
+    content: '•';
+    color: #667eea;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+/* ジャンルセクション */
+.genre-section {
+    padding: 4rem 0;
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.genre-list {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.genre-item {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.genre-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    border-color: rgba(147, 51, 234, 0.2);
+}
+
+.genre-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.genre-icon {
+    font-size: 2rem;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.genre-item h4 {
+    font-size: 1.3rem;
+    color: #2c3e50;
+    margin: 0;
+    font-family: 'Philosopher', serif;
+}
+
+.genre-item p {
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .streamer-grid,
+    .style-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .intro-text {
+        font-size: 1.1rem;
+    }
+    
+    .streamer-card,
+    .style-card,
+    .genre-item {
+        padding: 1.5rem;
+    }
+    
+    .streamer-icon {
+        font-size: 2.5rem;
+    }
+    
+    .style-icon {
+        font-size: 2rem;
+    }
+    
+    .genre-icon {
+        font-size: 1.5rem;
+    }
+    
+    .breadcrumb-nav {
+        font-size: 0.8rem;
+    }
+    
+    .streamer-tags {
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    .streamer-card,
+    .style-card,
+    .genre-item {
+        padding: 1rem;
+    }
+    
+    .intro-text {
+        font-size: 1rem;
+    }
+    
+    .streamer-icon {
+        font-size: 2rem;
+    }
+    
+    .style-icon {
+        font-size: 1.8rem;
+    }
+    
+    .genre-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+    
+    .genre-icon {
+        font-size: 1.8rem;
+    }
+}
